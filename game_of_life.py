@@ -69,7 +69,11 @@ keyboard.on_press_key("down", move_player)
 keyboard.on_press_key("left", move_player)
 keyboard.on_press_key("right", move_player)
 
+last_step = time.time()
 while True:
     print_grid()
-    update_grid()
+    if last_step + 0.5 < time.time():
+        update_grid()
+        last_step = time.time()
     time.sleep(0.05)
+    
