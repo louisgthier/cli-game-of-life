@@ -57,11 +57,20 @@ def move_player(key):
 def place_remove_cell(key):
     grid[player_pos[0]][player_pos[1]] = (grid[player_pos[0]][player_pos[1]] + 1) % 2
 
+def reset_grid(key):
+    global grid
+    if key.name == 'r':
+        grid = [[random.randint(0, 1) for x in range(WIDTH)] for y in range(HEIGHT)]
+    elif key.name == 'c':
+        grid = [[0 for x in range(WIDTH)] for y in range(HEIGHT)]
+
 keyboard.on_press_key("up", move_player)
 keyboard.on_press_key("down", move_player)
 keyboard.on_press_key("left", move_player)
 keyboard.on_press_key("right", move_player)
 keyboard.on_press_key("space", place_remove_cell)
+keyboard.on_press_key("r", reset_grid)
+keyboard.on_press_key("c", reset_grid)
 
 last_step = time.time()
 while True:
