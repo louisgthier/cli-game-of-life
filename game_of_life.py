@@ -64,6 +64,13 @@ def reset_grid(key):
     elif key.name == 'c':
         grid = [[0 for x in range(WIDTH)] for y in range(HEIGHT)]
 
+
+paused = False
+
+def pause_and_play(key):
+    global paused
+    paused = not paused
+
 keyboard.on_press_key("up", move_player)
 keyboard.on_press_key("down", move_player)
 keyboard.on_press_key("left", move_player)
@@ -71,11 +78,13 @@ keyboard.on_press_key("right", move_player)
 keyboard.on_press_key("space", place_remove_cell)
 keyboard.on_press_key("r", reset_grid)
 keyboard.on_press_key("c", reset_grid)
+keyboard.on_press_key("esc", exit)
+keyboard.on_press_key("p", pause_and_play)
 
 last_step = time.time()
 while True:
     print_grid()
-    if last_step + 0.5 < time.time():
+    if last_step + 0.5 < time.time() and not paused:
         update_grid()
         last_step = time.time()
     time.sleep(0.05)
