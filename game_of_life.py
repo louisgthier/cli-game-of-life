@@ -54,10 +54,14 @@ def move_player(key):
     elif key.name == 'right':
         player_pos[1] = min(WIDTH - 1, player_pos[1] + 1)
 
+def place_remove_cell(key):
+    grid[player_pos[0]][player_pos[1]] = (grid[player_pos[0]][player_pos[1]] + 1) % 2
+
 keyboard.on_press_key("up", move_player)
 keyboard.on_press_key("down", move_player)
 keyboard.on_press_key("left", move_player)
 keyboard.on_press_key("right", move_player)
+keyboard.on_press_key("space", place_remove_cell)
 
 last_step = time.time()
 while True:
