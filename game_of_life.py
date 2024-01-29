@@ -5,8 +5,6 @@ import random
 from colorama import Fore, Back, Style
 import keyboard
 
-WIDTH = 250
-HEIGHT = 65
 
 # Create a 2D array
 grid = [[random.randint(0, 1) for x in range(WIDTH)] for y in range(HEIGHT)]
