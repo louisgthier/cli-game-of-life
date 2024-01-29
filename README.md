@@ -7,7 +7,7 @@ This project is a simple implementation of Conway's Game of Life, a cellular aut
 In this implementation, the game is played in the terminal. The grid is displayed as a matrix of characters, with '#' representing a live cell and ' ' (a space) representing a dead cell. We added a cursor that you can move around the grid using the arrow keys. The user cursor is represented by a 'O' character.
 
 ## Controls
-The user can move around the grid and toggle the state of the cell they are currently on by pressing the space bar. The user can also press the 'r' key to reset the grid to a random state, or 'c' to clear the grid. Pressing the 'enter' key will start the game, and pressing it again will pause the game. The user can also press the 'esc' key to quit the game. The right and left arrow keys can be used to go forward and backward in time, stepping through the game one generation at a time.
+The user can move around the grid and toggle the state of the cell they are currently on by pressing the space bar. The user can also press the 'r' key to reset the grid to a random state, or 'c' to clear the grid. Pressing the 'p' key will start the game, and pressing it again will pause the game. The user can also press the 'esc' key to quit the game. The right and left arrow keys can be used to go forward and backward in time, stepping through the game one generation at a time.
 
 ## Running the Project
 To run the project, you will need Python 3 and pip installed on your machine. You will also need to install the `colorama` and `keyboard` libraries, which can be done by running `pip install colorama keyboard`.
